@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/market")
-class marketController(private val marketService: MarketService, private val portfolioService: PortfolioService) {
+class marketController(
+        private val marketService: MarketService,
+        private val portfolioService: PortfolioService
+) {
 
     @GetMapping("/price")
     fun getPrice() = marketService.getLastPrice()

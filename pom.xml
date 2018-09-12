@@ -71,11 +71,25 @@
 			<version>2.6.1</version>
 		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>javax.xml.bind</groupId>-->
-			<!--<artifactId>jaxb-api</artifactId>-->
-			<!--<version>2.3.0</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.mockk</groupId>
+			<artifactId>mockk</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains.kotlin</groupId>
+			<artifactId>kotlin-test-junit</artifactId>
+			<version>${kotlin.version}</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>

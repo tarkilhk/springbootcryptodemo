@@ -13,7 +13,6 @@ class PortfolioService(private val marketService: MarketService) {
 
     fun getExecutions() = executions
 
-
     fun marketValue():Double {
         val lastPrice = marketService.getLastPrice()
         return executions.map { lastPrice * it.order.size }.sum()
@@ -22,6 +21,8 @@ class PortfolioService(private val marketService: MarketService) {
     fun cost(): Double {
         return executions.map { it.order.size * it.price }.sum()
     }
+
+    fun cost2() = executions.map { it.order.size * it.price }.sum()
 
     fun pnl(): Double {
         // market value - cost
