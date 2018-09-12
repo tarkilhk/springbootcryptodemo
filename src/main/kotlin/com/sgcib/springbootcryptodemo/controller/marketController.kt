@@ -3,11 +3,12 @@ package com.sgcib.springbootcryptodemo.controller
 import com.sgcib.springbootcryptodemo.domain.Execution
 import com.sgcib.springbootcryptodemo.domain.Order
 import com.sgcib.springbootcryptodemo.service.MarketService
+import com.sgcib.springbootcryptodemo.service.PortfolioService
 import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/market")
-class marketController(private val marketService: MarketService) {
+class marketController(private val marketService: MarketService, private val portfolioService: PortfolioService) {
 
     @GetMapping("/price")
     fun getPrice() = marketService.getLastPrice()
@@ -15,7 +16,9 @@ class marketController(private val marketService: MarketService) {
     @PostMapping("/execute")
     fun execute(@RequestParam size: Int): Execution {
         val order = Order(size)
-        return marketService.execute(order)
+        val execution = marketService.execute(order)
+        portfolioService.addExecution(execution)
+        return execution
     }
 
 }
