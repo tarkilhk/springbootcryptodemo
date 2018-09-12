@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/market")
 class marketController {
 
-    @GetMapping("/price")
+    @GetMapping("/price2")
     fun getPrice() = 2.0
 }
