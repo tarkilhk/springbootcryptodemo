@@ -12,4 +12,6 @@ class PortfolioController(private val portfolioService: PortfolioService) {
     @GetMapping("/executions")
     fun getExecutions() = portfolioService.getExecutions()
 
+    @GetMapping("/pnl")
+    fun getPnl() = portfolioService.calculatePnl()
 }
