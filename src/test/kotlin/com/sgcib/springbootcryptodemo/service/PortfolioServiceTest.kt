@@ -23,6 +23,6 @@
 //    @Test
 //    fun `Test compute pnl, expect compute for all product`() {
 //        val actual = portfolioService.calculatePnl()
-//        assertEquals(5000.0, actual)
+//        assertEquals(, actual)
 //    }
 //}
